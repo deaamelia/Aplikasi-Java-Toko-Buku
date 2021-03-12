@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="315e82cf-4724-489f-86cb-f3139c27ed63">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="57"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tbdatabuku.`kode_buku` AS tbdatabuku_kode_buku,
+     tbdatabuku.`nama_buku` AS tbdatabuku_nama_buku,
+     tbdatabuku.`jenis_buku` AS tbdatabuku_jenis_buku,
+     tbdatabuku.`penerbit` AS tbdatabuku_penerbit,
+     tbdatabuku.`tahun_terbit` AS tbdatabuku_tahun_terbit,
+     tbdatabuku.`jumlah_stok` AS tbdatabuku_jumlah_stok,
+     tbdatabuku.`harga_jual` AS tbdatabuku_harga_jual,
+     tbdatabuku.`harga_reseller` AS tbdatabuku_harga_reseller
+FROM
+     `tbdatabuku` tbdatabuku]]>
+	</queryString>
+	<field name="tbdatabuku_kode_buku" class="java.lang.String"/>
+	<field name="tbdatabuku_nama_buku" class="java.lang.String"/>
+	<field name="tbdatabuku_jenis_buku" class="java.lang.String"/>
+	<field name="tbdatabuku_penerbit" class="java.lang.String"/>
+	<field name="tbdatabuku_tahun_terbit" class="java.lang.String"/>
+	<field name="tbdatabuku_jumlah_stok" class="java.lang.Integer"/>
+	<field name="tbdatabuku_harga_jual" class="java.lang.Integer"/>
+	<field name="tbdatabuku_harga_reseller" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="126" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="149" y="0" width="571" height="69" uuid="38d4c5d1-27b5-45b3-bd66-576d5c75ec04"/>
+				<textElement verticalAlignment="Middle">
+					<font size="26" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[SISTEM INFORMASI PENJUALAN BUKU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="264" y="53" width="321" height="39" uuid="87989302-ef55-4f7b-a385-4f5ba2626431"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="22" isBold="true" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[CENDIKIA BOOK STORE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="208" y="87" width="424" height="39" uuid="ba8edcf8-b079-41e4-a604-8d23b1da2aa1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="20" isBold="true" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA BUKU]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="118" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="10" width="127" height="20" uuid="a877f496-9db5-439b-a18b-9b365eb7aa7d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Nama Perusahaan    :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="34" width="125" height="20" uuid="d96301a1-fc9a-4d40-b3a1-c878c6e4dac1"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Alamat                    :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="60" width="125" height="20" uuid="2074d632-1a3a-4e0e-be25-1d5ce81e210d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Provinsi                  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="585" y="8" width="66" height="20" uuid="3916f0b6-1b52-468c-9af7-d911405275ca"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Tanggal   :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="10" width="127" height="20" uuid="f4379d4b-6317-4297-9b6d-19b658441df0"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Cendikia Book Store]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="34" width="127" height="20" uuid="5d92e4d3-9c13-4597-ad21-20747dc32a3a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Karawang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="60" width="127" height="20" uuid="f32408e7-a61a-485d-8c77-0612378e19d2"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Jawa Barat]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="-19" y="-3" width="841" height="1" uuid="1a39864b-3b71-4175-a331-b8a875c47ada"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="651" y="8" width="149" height="18" uuid="1d6cf516-a7b8-474b-8d1f-7c84002f3ff7"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="17" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="802" height="1" uuid="8c158e95-d6df-41e0-8a66-32527e600a84"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="264" y="0" width="85" height="17" forecolor="#736343" uuid="f9f9f479-7026-4db3-b243-4e679b44c51f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Jenis Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="353" y="0" width="81" height="17" forecolor="#736343" uuid="2696e996-e529-4fa3-977c-8c38bdf0c14c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Penerbit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="433" y="0" width="89" height="17" forecolor="#736343" uuid="312b91d9-fc1f-45e5-a068-38a271968ae5"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Tahun Terbit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="602" y="0" width="100" height="17" forecolor="#736343" uuid="d5353aa4-95b3-4623-8c03-a4ef55963a41"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Harga Jual]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="702" y="0" width="100" height="17" forecolor="#736343" uuid="dfe7ee14-e10c-47e1-8c16-cea3735606b7"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Harga Reseller]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="524" y="0" width="81" height="17" forecolor="#736343" uuid="130c566b-a526-4c38-ba82-ef4248b977f1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Jumlah Stok]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="90" y="0" width="174" height="17" forecolor="#736343" uuid="1b9eb69a-3685-45cb-80f5-b2dac5b5f6c3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Nama Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="85" height="17" forecolor="#736343" uuid="91ba587a-ff6e-49d9-a867-195f7a4a1993"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Kode Buku]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="0dfeb16f-2658-465b-b497-22250c5c3267"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="80" height="15" uuid="9a47d4a2-da3d-4014-9b64-7b13dcd6af9f"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbdatabuku_kode_buku}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="90" y="0" width="174" height="15" uuid="d038d1f2-fb67-409a-9343-51e92b1e453d"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbdatabuku_nama_buku}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="264" y="0" width="85" height="15" uuid="9c3639ee-1773-4db3-abc0-a8680fa9d827"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbdatabuku_jenis_buku}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="354" y="0" width="81" height="15" uuid="a49c7531-5d50-4317-9bea-f88c7196243e"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbdatabuku_penerbit}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="432" y="0" width="88" height="15" uuid="fa1a96ad-87a0-48ce-a9d9-0003c38706df"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbdatabuku_tahun_terbit}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="602" y="0" width="100" height="15" uuid="3744d19e-f111-4053-b541-599fe6aa2e65"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbdatabuku_harga_jual}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="700" y="0" width="100" height="15" uuid="46a6c0d8-5f49-410c-bdea-37c97a49bb0e"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbdatabuku_harga_reseller}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="523" y="0" width="81" height="15" uuid="1b734b74-8408-4a20-95db-9810a459ec43"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbdatabuku_jumlah_stok}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="802" height="1" uuid="f365d38d-a506-4348-ae15-739bc847dff8"/>
+					<graphicElement>
+						<pen lineWidth="0.5" lineColor="#999999"/>
+					</graphicElement>
+				</line>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="2969f837-4fc9-434c-beba-c1917d550355"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
